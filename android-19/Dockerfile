@@ -20,4 +20,4 @@ RUN echo y | /usr/local/android-sdk/tools/android update sdk --filter android-19
 WORKDIR /data
 
 # Setup ANDROID_HOME
-ENV ANDROID_HOME /usr/lib/android-sdk
+ENV ANDROID_HOME /usr/local/android-sdk
