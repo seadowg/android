@@ -1,5 +1,5 @@
 # Pull base image.
-FROM dockerfile/java:openjdk-7-jdk
+FROM java:openjdk-7-jdk
 
 # Install Android
 RUN \
