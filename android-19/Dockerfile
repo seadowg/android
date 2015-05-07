@@ -15,6 +15,7 @@ RUN \
 
 # Install Android APIs
 RUN echo y | /usr/local/android-sdk/tools/android update sdk --filter android-19 --no-ui --force -a
+RUN echo y | /usr/local/android-sdk/tools/android update sdk --filter extra-android-support --no-ui --force -a
 
 # Define working directory.
 WORKDIR /data
