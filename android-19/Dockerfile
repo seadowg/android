@@ -11,7 +11,7 @@ RUN \
 # Install Android Tools
 RUN \
   echo y | /usr/local/android-sdk/tools/android update sdk --filter platform-tools --no-ui --force -a && \
-  echo y | /usr/local/android-sdk/tools/android update sdk --filter build-tools-21.1.2 --no-ui --force -a
+  echo y | /usr/local/android-sdk/tools/android update sdk --filter build-tools-22.0.1 --no-ui --force -a
 
 # Install Android APIs
 RUN echo y | /usr/local/android-sdk/tools/android update sdk --filter android-19 --no-ui --force -a
