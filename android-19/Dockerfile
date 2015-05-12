@@ -1,6 +1,10 @@
 # Pull base image.
 FROM java:openjdk-7-jdk
 
+# Install SDK requirements
+RUN apt-get update
+RUN apt-get install lib32stdc++6 lib32z1
+
 # Install Android
 RUN \
   wget http://dl.google.com/android/android-sdk_r24.0.2-linux.tgz && \
