@@ -3,7 +3,7 @@ FROM ubuntu:precise
 
 # Install SDK requirements
 RUN apt-get update
-RUN apt-get -y install lib32stdc++6 lib32z1
+RUN apt-get -y install lib32stdc++6 lib32z1 wget
 
 # Install JDK 7
 RUN apt-get -y install openjdk-7-jdk
