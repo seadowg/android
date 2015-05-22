@@ -1,9 +1,12 @@
 # Pull base image.
-FROM java:openjdk-7-jdk
+FROM ubuntu:precise
 
 # Install SDK requirements
 RUN apt-get update
 RUN apt-get -y install lib32stdc++6 lib32z1
+
+# Install JDK 7
+RUN apt-get -y install openjdk-7-jdk
 
 # Install Android
 RUN \
