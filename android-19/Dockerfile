@@ -1,4 +1,4 @@
-# Pull base image.
+# Pull base image
 FROM java:openjdk-7-jdk
 
 # Install SDK requirements
