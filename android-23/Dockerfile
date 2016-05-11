@@ -1,5 +1,5 @@
 # Pull base image
-FROM seadowg/android-sdk
+FROM seadowg/android-sdk:build-tools-23.0.3
 
 # Install Android APIs
 RUN \
