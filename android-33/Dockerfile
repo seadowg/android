@@ -1,6 +1,14 @@
-FROM cimg/base:2023.03
+FROM ubuntu:22.04
 
 LABEL maintainer="Callum Stott <callum@seadowg.com>"
+
+# Install essentials
+RUN apt-get update && apt-get install -y \
+    sudo \
+    curl \
+    wget \
+    gnupg \
+    software-properties-common
 
 # Java 11 is default
 RUN sudo apt-get update && sudo apt-get install -y \
@@ -60,8 +68,7 @@ RUN echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "tools" && \
 # Install some useful packages
 RUN echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "extras;android;m2repository" && \
 	echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "extras;google;m2repository" && \
-	echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "extras;google;google_play_services" && \
-	sudo gem install fastlane --version 2.208.0 --no-document
+	echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "extras;google;google_play_services"
 
 # Install Google Cloud CLI
 # Latest gcloud version can be found here: https://cloud.google.com/sdk/docs/release-notes
@@ -72,5 +79,5 @@ RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key ad
 	sudo gcloud config set --installation component_manager/disable_update_check true && \
 	sudo gcloud config set disable_usage_reporting false
 
-## Install Android version
+# Install Android version
 RUN echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "platforms;android-33"
